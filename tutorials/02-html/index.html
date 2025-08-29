@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Html</title>
+    <meta name="description" content="Free Web tutorials">
+</head>
+<body>
+   <h1 draggable="true">HTML for Gamers</h1> 
+   <nav>
+       <ul>
+           <li><a href="#section1">Section 1 : Explorers</a></li>
+           <li><a href="#section2">Section 2 : Socializers</a></li>
+           <li><a href="#section3">Section 3 : Killers</a></li>
+           <li><a href="#section4">Section 4 : Your Description</a></li>
+       </ul>
+   </nav>
+   <div>
+    <img src="images/iknowwhatyouare.jpg" alt="I know what you are." width="600" height="400">
+    <img src="images/iknowwhatyouare.jpg" alt="I know what you are." width="600" height="400">
+   </div>
+   <main>
+     <label for="color-slider">Cat Color:</label>
+     <input type="range" id="color-slider" min="0" max="360" value="0">
+     <figure role="img" aria-labelledby="Cat-caption">
+          <pre id="ascii-cat" style="color: #ff0000; transition: filter 0.3s;">
+          __..--''``---....___   _..._    __
+ /// //_.-'    .-/";  `        ``<._  ``.''_ `. / // /
+///_.-' _..--.'_    \                    `( ) ) // //
+/ (_..-' // (< _     ;_..__               ; `' / ///
+ / // // //  `-._,_)' // / ``--...____..-' /// / //
+        </pre>
+          <figcaption id="Cat-caption">
+            Ha ha, there be a cat here.
+          </figcaption>
+    </figure>
+    <script>
+        const slider = document.getElementById('color-slider');
+        const cat = document.getElementById('ascii-cat');
+        slider.addEventListener('input', function() {
+          cat.style.filter = `hue-rotate(${this.value}deg)`;
+        });
+    </script>
+    <section id="section1" class="red-bit">
+        <h2>Explorers</h2>
+        <p>Explorers, dubbed "Spades" (♠) for their tendency to dig around, are players who prefer discovering areas, and immerse themselves in the game world. They are often annoyed by time-restricted missions as that does not allow them to traverse at their own pace. They enjoy finding glitches or a hidden easter egg.</p>
+    </section>
+    <section id="section2">
+        <h2>Socializers</h2>
+        <p>There are a multitude of gamers who choose to play games for the social aspect, rather than the actual game itself. These players are known as Socializers or "Hearts". (♥) They gain the most enjoyment from a game by interacting with other players, and sometimes, computer-controlled characters with personality. The game is merely a tool they use to meet others in-game or outside of it. Some socializers enjoy helping others for the sake of altruism, while explorers help for the sake of discovering previously unattained areas, and achievers or killers want to help for the sake of an extrinsic reward such as points.</p>
+    </section>
+    <section id="section3">
+        <h2>Killers</h2>
+        <p>Killers, well-suited as "Clubs" (♣), are, more than other player types, motivated by powergaming and eclipsing others. They want to achieve first rank on the high score board or beat another speedrunner's time record.</p>
+    </section>
+    <section id="section4">
+        <h2 contenteditable="true">Your Description</h2>
+        <p contenteditable="true">Type here what 4th kind of gamer exists in the space!</p>
+    </section>
+   </main>
+   <main>
+    <section>
+<fieldset>
+  <legend>What kind of Gamer are you?:</legend>
+
+  <div>
+	<input type="radio" id="gamerspecies1" name="gamertype" value="explorer" checked />
+	<label for="huey">Explorer</label>
+  </div>
+
+  <div>
+	<input type="radio" id="dgamerspecies2" name="gamertype" value="socializer" />
+	<label for="dewey">Socializer</label>
+  </div>
+
+  <div>
+	<input type="radio" id="lgamerspecies3" name="gamertype" value="killer" />
+	<label for="louie">Killer</label>
+  </div>
+</fieldset>
+</section>
+
+   </main>
+   
+</body>
+</html>
