@@ -1,0 +1,60 @@
+
+/* Global
+----------------------------------*/
+
+body {
+background: pink;
+} 
+
+/*Links*/
+a {
+    color: #009e15;
+}
+a:hover {
+    color: #00c3ff;
+    text-decoration: none;
+}
+footer a {
+    color: #08f728;
+}
+.btn {
+    background-color: #00ff1e;
+    color: rgb(255, 61, 239);
+    text-decoration: none;
+}
+
+/* Home
+----------------------------------*/
+.home {
+background:url(../images/bg-home-office-studio.jpg) no-repeat;
+background-size: cover;
+}
+.home .content-wrapper {
+    background: rgb(255,255,255 )
+}
+/* Resume
+----------------------------------*/
+
+/* Header
+----------------------------------*/
+
+/* Profile
+----------------------------------*/
+
+/* Projects
+----------------------------------*/
+
+/* Work Experience
+----------------------------------*/
+
+/* Education
+----------------------------------*/
+
+/* Footer
+----------------------------------*/
+footer {
+  background: rgb(255, 2, 141);
+}
+/* 
+----------------------------------*/
+
