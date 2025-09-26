@@ -7,6 +7,27 @@ background: pink;
 } 
 
 /*Links*/
+
+
+/* 
+  https://www.paulirish.com/2012/box-sizing-border-box-ftw/
+*/
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+html, body {
+    height: 100%;
+}
+body {
+    background: #f6f6f6; 
+    margin: 0;
+}
+
+
 a {
     color: #009e15;
 }
@@ -34,10 +55,17 @@ footer a {
 .home {
 background:url(../images/bg-home-office-studio.jpg) no-repeat;
 background-size: cover;
+display: flex;
+flex-direction: column;
 }
 .home .content-wrapper {
-    background: rgb(255,255,255 )
+    flex: 1 0 auto;
 }
+.content-bg {
+    background: rgb(255,255,255, 0.85);
+    padding: 30px;
+}
+
 /* Resume
 ----------------------------------*/
 .resume header::before {
@@ -84,6 +112,11 @@ margin: 30px 0;
 
 /* Work Experience
 ----------------------------------*/
+.work-item {
+    display: grid;
+    grid-template-columns: 300px 2fr;
+    column-gap: 20px;
+}
 
 /* Education
 ----------------------------------*/
@@ -92,7 +125,27 @@ margin: 30px 0;
 ----------------------------------*/
 footer {
   background: rgb(255, 2, 141);
+  color: whitesmoke;
+  display: flex;
+  justify-content: space-between;
+  padding:  0 20px;
 }
+
+.socials {
+    list-style-type: none;
+    padding: 0;
+}
+.socials li {
+    display: inline-block;
+    margin-left: 10px;
+}
+.socials img {
+    width: 32px;
+}
+.socials img:hover {
+    opacity: 0.5;
+}
+
 /* 
 ----------------------------------*/
 
