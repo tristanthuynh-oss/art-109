@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>My Epic Works</title>
-      <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
   </head>
   <body class="resume">
     <a class="btn download-link" href="1">Download PDF</a>
@@ -36,6 +39,7 @@
         <p>Optional paragraph for the Projects summary. Delete if not being used.</p>
 
         <!-- To add more items, copy this whole <section></section> block-->
+         <div class="project-wrapper">
           <section class="project-item">
           <img src="images/project-branding-500px.jpg" srcset="images/project-branding-1000px.jpg 1000w" alt="description of image" width="500" height="300">
           <h3>Project Name</h3>
@@ -55,7 +59,7 @@
           <!-- additional links, e.g. newsletter -->
           <a class="btn" href="#" target="_blank">Another link</a>
         </section>
-
+        </div>
         <!-- End content edits here. -->
       </section>
 
@@ -109,10 +113,16 @@
         <h2>Education</h2>
 
         <!-- To add more items, copy this whole <section></section> block -->
-        <section>
+        <section class="education-item">
           <h3>San Jose State University</h3>
           <p>Bachelors of Fine Arts, Digital Media Arts, 2026</p>
           <p>I will create things that will shake the world order.</p>
+        </section>
+
+        <section class="education-item">
+          <h3>The School of Kodaka and Uchikoshi</h3>
+          <p>Bachelors of Weirdos, Over Complicated Stories, 2026</p>
+          <p>Puzzles man.</p>
         </section>
 
         <!-- End content edits here. -->
