@@ -54,6 +54,11 @@ body.downstairs {
     opacity: 0;
 }
 
+body.kitchen {
+  background: url('./assets/images/bg_kitchen.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
 header {
     padding: 50px;
     background-color: blueviolet;
