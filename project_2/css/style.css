@@ -1,0 +1,311 @@
+/*
+CSS RESETS:
+ Border box reset:
+https://www.paulirish.com/2012/box-sizing-border-box-ftw/
+ 62.5% Fix: https: //www.aleksandrhovhannisyan.com/blog/62-5-percent-font-size-trick/
+*/
+
+
+html {
+   box-sizing: border-box;
+   font-size: 62.5%;
+}
+
+
+*,
+*:before,
+*:after {
+   box-sizing: inherit;
+   margin: 0;
+   padding: 0;
+}
+
+
+html,
+body {
+background-color: #000;
+   height: 100%;
+   
+}
+
+
+body {
+    font-size: 1.6rem;
+   /* font-size 1.6rem is now the same as 16px */
+   line-height: 1.6;
+   background: url('/project_2/assets/maps/hallway.jpg') center center / cover no-repeat fixed;
+}
+
+body.downstairs {
+    background: url('/project_2/assets/maps/downstairs.png') center center / cover no-repeat fixed;
+    background-color: #000;
+}
+
+.downstairs-fade {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: #000;
+    opacity: 1;
+    pointer-events: none;
+    z-index: 9999;
+    transition: opacity 1s;
+}
+.downstairs-fade.faded {
+    opacity: 0;
+}
+
+header {
+    padding: 50px;
+    background-color: blueviolet;
+    text-align: center;
+}
+
+main {
+color: darkblue
+}
+
+/* Fonts */
+@font-face {
+    font-family: 'Expose-Regular';
+    src: url('/project_2/assets/fonts/Expose-Regular.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Alice-in-Wonderland';
+    src: url('/project_2/assets/fonts/Alice_in_Wonderland_3.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* CSS that creates the sick intro sequence */
+
+#start-screen {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(30,30,30,0.95);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 1s;
+    pointer-events: none;
+}
+
+#start-screen.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#start-screen.fade-out {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 1s;
+}
+
+.start-title {
+    font-family: 'Expose-Regular', sans-serif;
+    font-size: 5em;
+    font-weight: bold;
+    margin-bottom: 2em;
+    text-align: center;
+    letter-spacing: 0.1em;
+    text-shadow: 0 4px 24px #000, 0 1px 0 #222;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%   { transform: translateY(0); }
+    50%  { transform: translateY(-25px); }
+    100% { transform: translateY(0); }
+}
+
+.start-content {
+    
+    background: none;
+    padding: 0;
+    box-shadow: none;
+    border-radius: 0;
+}
+
+#start-btn {
+    font-family: 'Alice-in-Wonderland', sans-serif;
+    margin-top: 1em;
+    padding: 0.7em 2em;
+    font-size: 2em;
+    border: none;              
+    outline: none;             
+    border-radius: 10px;
+    background: #ffb300;
+    color: #222;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+#start-btn.hidden-btn {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 1s;
+}
+#start-btn.visible-btn {
+    opacity: 1;
+    pointer-events: auto;
+    transition: opacity 1s;
+}
+
+#start-btn:hover {
+    background: #ffd54f;
+    animation: rock-btn 0.5s infinite alternate;
+}
+
+@keyframes rock-btn {
+    0%   { transform: rotate(-10deg); }
+    50%  { transform: rotate(10deg); }
+    100% { transform: rotate(-10deg); }
+}
+
+.start-desc {
+    font-family: 'Alice-in-Wonderland', sans-serif;
+    opacity: 0;
+    transition: opacity 1.2s;
+    font-size: 2em;
+    color: #ccc;
+    margin-bottom: 2em;
+    text-align: center;
+    max-width: 600px;
+}
+.start-desc.visible {
+    opacity: 1;
+}
+/* CSS for the maps */
+#start-screen {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: url('/project_2/assets/maps/bedroom.png') center center / cover no-repeat, rgba(30,30,30,0.85);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 1s;
+    pointer-events: none;
+}
+
+
+
+/* CSS for my scary images */
+
+.fredbear {
+    position: fixed;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 200px;
+    z-index: 10;
+    pointer-events: auto;
+    transition: filter 0.2s;
+}
+
+.fredbear.jiggle {
+    animation: fredbear-jiggle 0.4s;
+}
+
+@keyframes fredbear-jiggle {
+    0%   { transform: translateX(-50%) rotate(0deg); }
+    20%  { transform: translateX(-50%) rotate(-10deg); }
+    40%  { transform: translateX(-50%) rotate(10deg); }
+    60%  { transform: translateX(-50%) rotate(-8deg); }
+    80%  { transform: translateX(-50%) rotate(8deg); }
+    100% { transform: translateX(-50%) rotate(0deg); }
+}
+
+.laundry-basket {
+    position: fixed;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 400px;
+    z-index: 10;
+    pointer-events: auto;
+    transition: filter 0.2s;
+}
+
+.laundry-basket.jiggle {
+    animation: basket-jiggle 0.4s;
+}
+
+@keyframes basket-jiggle {
+    0%   { transform: translateX(-50%) rotate(0deg); }
+    20%  { transform: translateX(-50%) rotate(-10deg); }
+    40%  { transform: translateX(-50%) rotate(10deg); }
+    60%  { transform: translateX(-50%) rotate(-8deg); }
+    80%  { transform: translateX(-50%) rotate(8deg); }
+    100% { transform: translateX(-50%) rotate(0deg); }
+}
+
+.framed-picture {
+  position: absolute;
+  top: 20em;
+  right: 24px;
+  width: 25em;           /* tweak as you like */
+  height: auto;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-drag: none;
+  transition: transform 120ms ease;
+  z-index: 3;             /* above background */
+}
+.jiggle {
+  animation: jiggle 0.35s ease;
+}
+@keyframes jiggle {
+  0%,100% { transform: translate(0,0) rotate(0); }
+  25%     { transform: translate(1px,-1px) rotate(-1.5deg); }
+  50%     { transform: translate(-1px,1px) rotate(1.5deg); }
+  75%     { transform: translate(0,0) rotate(0); }
+}
+
+
+
+@keyframes picture-enter {
+  0%   { transform: translateY(-20px); opacity: 0; }
+  100% { transform: translateY(0);     opacity: 1; }
+}
+
+
+.choice-buttons {
+    display: flex;
+    gap: 2em;
+    justify-content: center;
+    margin-top: 2em;
+   
+
+}
+.choice-buttons button {
+    font-family: 'Alice-in-Wonderland', sans-serif;
+    padding: 1em 2em;
+    font-size: 2em;
+    border-radius: 10px;
+    border: none;
+    background: #333;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.choice-buttons button:hover {
+    background: #ffd54f;
+    color: #222;
+    animation: float-buttons 2.5s ease-in-out infinite;
+}
+
+@keyframes float-buttons {
+    0%   { transform: translateY(0); }
+    50%  { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+}
