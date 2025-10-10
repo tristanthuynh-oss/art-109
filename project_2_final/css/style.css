@@ -1,0 +1,371 @@
+/* =========================================
+   Base / Reset
+   ========================================= */
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; /* 1rem = 10px */
+}
+*, *::before, *::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+html, body {
+  height: 100%;
+  background-color: #000;
+}
+body {
+  font-size: 1.6rem; /* 16px */
+  line-height: 1.6;
+  background: url('../assets/maps/hallway.jpg') center center / cover no-repeat fixed;
+}
+
+/* =========================================
+   Scene Backgrounds
+   ========================================= */
+
+body.downstairs {
+  background: url('../assets/maps/downstairs.png') center center / cover no-repeat fixed;
+  background-color: #000;
+}
+body.kitchen {
+  background: url('../assets/maps/kitchen.png') center center / cover no-repeat fixed;
+}
+
+/* Downstairs fade overlay */
+.downstairs-fade {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  opacity: 1;
+  pointer-events: none;
+  z-index: 9999;
+  transition: opacity 1s;
+}
+.downstairs-fade.faded { opacity: 0; }
+
+/* =========================================
+   Structure / Typography
+   ========================================= */
+
+header {
+  padding: 50px;
+  background-color: blueviolet;
+  text-align: center;
+}
+main { color: darkblue; }
+
+/* Fonts */
+@font-face {
+  font-family: 'Expose-Regular';
+  src: url('../assets/fonts/Expose-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Alice-in-Wonderland';
+  src: url('../assets/fonts/Alice_in_Wonderland_3.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* =========================================
+   Start Screen
+   ========================================= */
+
+#start-screen {
+  position: fixed;
+  inset: 0;
+  /* bedroom image + dark overlay */
+  background: url('../assets/maps/bedroom.png') center center / cover no-repeat, rgba(30,30,30,0.85);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 1s;
+  pointer-events: none;
+}
+#start-screen.visible { opacity: 1; pointer-events: auto; }
+#start-screen.fade-out { opacity: 0; pointer-events: none; transition: opacity 1s; }
+
+.start-title {
+  font-family: 'Expose-Regular', sans-serif;
+  font-size: 5em;
+  font-weight: bold;
+  margin-bottom: 2em;
+  text-align: center;
+  letter-spacing: 0.1em;
+  text-shadow: 0 4px 24px #000, 0 1px 0 #222;
+  animation: float 3s ease-in-out infinite;
+}
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-25px); }
+  100% { transform: translateY(0); }
+}
+
+.start-content { background: none; padding: 0; box-shadow: none; border-radius: 0; }
+
+#start-btn {
+  font-family: 'Alice-in-Wonderland', sans-serif;
+  margin-top: 1em;
+  padding: 0.7em 2em;
+  font-size: 2em;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  background: #ffb300;
+  color: #222;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+#start-btn.hidden-btn { opacity: 0; pointer-events: none; transition: opacity 1s; }
+#start-btn.visible-btn { opacity: 1; pointer-events: auto; transition: opacity 1s; }
+#start-btn:hover { background: #ffd54f; animation: rock-btn 0.5s infinite alternate; }
+@keyframes rock-btn {
+  0% { transform: rotate(-10deg); }
+  50% { transform: rotate(10deg); }
+  100% { transform: rotate(-10deg); }
+}
+
+.start-desc {
+  font-family: 'Alice-in-Wonderland', sans-serif;
+  opacity: 0;
+  transition: opacity 1.2s;
+  font-size: 2em;
+  color: #ccc;
+  margin-bottom: 2em;
+  text-align: center;
+  max-width: 600px;
+}
+.start-desc.visible { opacity: 1; }
+
+/* =========================================
+   Choice Buttons
+   ========================================= */
+
+.choice-buttons {
+  display: flex;
+  gap: 2em;
+  justify-content: center;
+  margin-top: 2em;
+}
+.choice-buttons button {
+  font-family: 'Alice-in-Wonderland', sans-serif;
+  padding: 1em 2em;
+  font-size: 2em;
+  border-radius: 10px;
+  border: none;
+  background: #333;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.choice-buttons button:hover {
+  background: #ffd54f;
+  color: #222;
+  animation: float-buttons 2.5s ease-in-out infinite;
+}
+@keyframes float-buttons {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0); }
+}
+
+/* =========================================
+   Interactables
+   ========================================= */
+
+/* Universal jiggle helper (generic) */
+.jiggle { animation: jiggle 0.35s ease; }
+@keyframes jiggle {
+  0%, 100% { transform: translate(0,0) rotate(0); }
+  25%      { transform: translate(1px,-1px) rotate(-1.5deg); }
+  50%      { transform: translate(-1px,1px) rotate(1.5deg); }
+  75%      { transform: translate(0,0) rotate(0); }
+}
+
+/* Fredbear (center bottom) */
+.fredbear {
+  position: fixed;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 200px;
+  z-index: 10;
+  pointer-events: auto;
+  transition: filter 0.2s;
+}
+.fredbear.jiggle { animation: fredbear-jiggle 0.4s; }
+@keyframes fredbear-jiggle {
+  0%   { transform: translateX(-50%) rotate(0deg); }
+  20%  { transform: translateX(-50%) rotate(-10deg); }
+  40%  { transform: translateX(-50%) rotate(10deg); }
+  60%  { transform: translateX(-50%) rotate(-8deg); }
+  80%  { transform: translateX(-50%) rotate(8deg); }
+  100% { transform: translateX(-50%) rotate(0deg); }
+}
+
+/* Laundry basket (center bottom) */
+.laundry-basket {
+  position: fixed;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 400px;
+  z-index: 10;
+  pointer-events: auto;
+  transition: filter 0.2s;
+}
+.laundry-basket.jiggle { animation: basket-jiggle 0.4s !important; }
+@keyframes basket-jiggle {
+  0%   { transform: translateX(-50%) rotate(0deg); }
+  20%  { transform: translateX(-50%) rotate(-10deg); }
+  40%  { transform: translateX(-50%) rotate(10deg); }
+  60%  { transform: translateX(-50%) rotate(-8deg); }
+  80%  { transform: translateX(-50%) rotate(8deg); }
+  100% { transform: translateX(-50%) rotate(0deg); }
+}
+
+/* Framed picture (top-right) */
+.framed-picture {
+  position: absolute;
+  top: 20em;
+  right: 24px;
+  width: 25em;
+  height: auto;
+  z-index: 3;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-drag: none;
+  /* no transform transition (prevents animation conflict) */
+  transition: filter 0.2s;
+  transform-origin: 50% 50%;
+}
+
+.framed-picture.jiggle {
+  animation: picture-jiggle 0.35s ease !important;
+}
+
+@keyframes picture-jiggle {
+  0%, 100% { transform: rotate(0); }
+  25%      { transform: rotate(-1.5deg); }
+  50%      { transform: rotate(1.5deg); }
+  75%      { transform: rotate(0); }
+}
+
+/* Spooky Cat (bottom-left) */
+.spooky-cat {
+  position: fixed;
+  left: 24px;
+  bottom: 24px;
+  width: 18em;
+  height: auto;
+  z-index: 10;
+  pointer-events: auto;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-drag: none;
+  transition: filter 0.2s; /* avoid transform transition to prevent jiggle jitter */
+}
+
+/* Fruit Basket (mid-right, vertically centered) */
+.fruit-basket {
+  position: fixed;
+  top: 50%;
+  right: 24px;
+  transform: translateY(-50%);
+  transform-origin: 50% 50%;
+  width: 25em;
+  height: auto;
+  z-index: 10;
+  pointer-events: auto;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-drag: none;
+  transition: filter 0.2s; /* avoid transform transition */
+}
+/* Custom jiggle that preserves translateY(-50%) */
+.fruit-basket.jiggle { animation: fruit-jiggle 0.35s ease !important; }
+@keyframes fruit-jiggle {
+  0%, 100% { transform: translateY(-50%) rotate(0); }
+  25%      { transform: translateY(-50%) rotate(-1.5deg); }
+  50%      { transform: translateY(-50%) rotate(1.5deg); }
+  75%      { transform: translateY(-50%) rotate(0); }
+}
+
+
+/* =========================================
+   Win Screen
+   ========================================= */
+
+#win-screen {
+  position: fixed;
+  inset: 0;
+  background: rgba(30,30,30,0.95);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1100;  /* above start-screen (1000) */
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.8s;
+}
+#win-screen.visible { opacity: 1; pointer-events: auto; }
+
+.win-title {
+  font-family: 'Expose-Regular', sans-serif;
+  font-size: 4.2em;
+  letter-spacing: 0.06em;
+  text-shadow: 0 4px 24px #000, 0 1px 0 #222;
+  margin: 0 0 0.6em;
+  text-align: center;
+}
+.win-desc {
+  font-family: 'Alice-in-Wonderland', sans-serif;
+  font-size: 2em;
+  color: #ddd;
+  margin: 0 0 1.4em;
+  text-align: center;
+  max-width: 720px;
+}
+
+/* Drink image hidden until win */
+.win-drink {
+  display: none;
+  width: 220px;
+  height: auto;
+  margin: 0 0 2em; /* space below drink */
+  -webkit-user-drag: none;
+  user-select: none;
+}
+.win-drink.visible {
+  display: block;
+  animation: rock-drink 1.2s ease-in-out infinite;
+}
+@keyframes rock-drink {
+  0%   { transform: rotate(0deg); }
+  25%  { transform: rotate(-6deg); }
+  50%  { transform: rotate(0deg); }
+  75%  { transform: rotate(6deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.win-actions button {
+  font-family: 'Alice-in-Wonderland', sans-serif;
+  padding: 0.7em 2em;
+  font-size: 2em;
+  border: none;
+  border-radius: 10px;
+  background: #ffb300;
+  color: #222;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.win-actions button:hover { background: #ffd54f; }
