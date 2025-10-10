@@ -33,11 +33,11 @@ body {
     font-size: 1.6rem;
    /* font-size 1.6rem is now the same as 16px */
    line-height: 1.6;
-   background: url('/project_2/assets/maps/hallway.jpg') center center / cover no-repeat fixed;
+   background: url('./assets/maps/hallway.jpg') center center / cover no-repeat fixed;
 }
 
 body.downstairs {
-    background: url('/project_2/assets/maps/downstairs.png') center center / cover no-repeat fixed;
+    background: url('./assets/maps/downstairs.png') center center / cover no-repeat fixed;
     background-color: #000;
 }
 
@@ -67,14 +67,14 @@ color: darkblue
 /* Fonts */
 @font-face {
     font-family: 'Expose-Regular';
-    src: url('/project_2/assets/fonts/Expose-Regular.otf') format('truetype');
+    src: url('./assets/fonts/Expose-Regular.otf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Alice-in-Wonderland';
-    src: url('/project_2/assets/fonts/Alice_in_Wonderland_3.ttf') format('truetype');
+    src: url('./assets/fonts/Alice_in_Wonderland_3.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -185,7 +185,7 @@ color: darkblue
 #start-screen {
     position: fixed;
     top: 0; left: 0; right: 0; bottom: 0;
-    background: url('/project_2/assets/maps/bedroom.png') center center / cover no-repeat, rgba(30,30,30,0.85);
+    background: url('./assets/maps/bedroom.png') center center / cover no-repeat, rgba(30,30,30,0.85);
     color: #fff;
     display: flex;
     flex-direction: column;
