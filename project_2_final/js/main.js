@@ -64,6 +64,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const KITCHEN_BG_CLASS = 'kitchen';
 
   // Images
+  const SPOOKY_FREDBEAR_SRC = './assets/images/fnafbear_unknown.png';
+  const NORMAL_FREDBEAR_SRC = './assets/images/fnafbear.png';
   const SPOOKY_BASKET_SRC   = './assets/images/laundrybasket_unknown.png';
   const NORMAL_BASKET_SRC   = './assets/images/laundrybasket.png';
   const SPOOKY_PICTURE_SRC  = './assets/images/framedphoto_unknown.png';
@@ -118,6 +120,45 @@ document.addEventListener('DOMContentLoaded', () => {
   /* =========================
      Interactable spawners
      ========================= */
+
+     function spawnSpookyFredbear() {
+  // use existing DOM node if present; otherwise create it
+  let bear = document.getElementById('fredbear');
+  if (!bear) {
+    bear = document.createElement('img');
+    bear.id = 'fredbear';
+    bear.className = 'fredbear slide-in';
+    document.body.appendChild(bear);
+  }
+
+  // start spooky (unless already set)
+  if (!bear.dataset.state || bear.dataset.state === 'spooky') {
+    bear.src = SPOOKY_FREDBEAR_SRC;
+    bear.alt = 'Spooky Fredbear on the floor';
+    bear.dataset.state = 'spooky';
+  }
+
+  // wipe previous listeners by cloning
+  const clone = bear.cloneNode(true);
+  bear.replaceWith(clone);
+  bear = clone;
+
+  // hover jiggle
+  on(bear, 'mouseenter', () => replayAnim(bear, 'jiggle'));
+
+  // click -> sound + swap to normal
+  on(bear, 'click', () => {
+    (reliefSound || buttonAudio)?.play?.().catch(() => {});
+    bear.src = NORMAL_FREDBEAR_SRC;
+    bear.dataset.state = 'normal';
+    replayAnim(bear, 'jiggle');
+  });
+
+  // clean up entrance class if used
+  on(bear, 'animationend', (e) => {
+    if (e.animationName === 'spooky-enter') bear.classList.remove('slide-in');
+  });
+}
 
   function spawnSpookyBasket() {
     if (document.getElementById('laundry-basket')) return;
@@ -193,7 +234,9 @@ document.addEventListener('DOMContentLoaded', () => {
   /* =========================
      Scenes
      ========================= */
+  spawnSpookyFredbear();
 
+  
   function enterDownstairs() {
     removeIfExists('fredbear');
 
