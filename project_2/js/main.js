@@ -54,8 +54,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const btnDownstairs = $('#btn-downstairs');
   const downstairsFade= $('#downstairs-fade');
   const laundryBasket = $('#laundry-basket');
-  const SPOOKY_BASKET_SRC = 'project_2/assets/images/laundrybasket_unknown.png';
-  const NORMAL_BASKET_SRC = 'project_2/assets/images/laundrybasket.png';
+  const SPOOKY_BASKET_SRC = './assets/images/laundrybasket_unknown.png';
+  const NORMAL_BASKET_SRC = './assets/images/laundrybasket.png';
   // ---------- Start sequence ----------
   if (startScreen) {
     startScreen.classList.add('visible');
