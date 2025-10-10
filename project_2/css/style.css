@@ -33,11 +33,11 @@ body {
     font-size: 1.6rem;
    /* font-size 1.6rem is now the same as 16px */
    line-height: 1.6;
-   background: url('./assets/maps/hallway.jpg') center center / cover no-repeat fixed;
+   background: url('../assets/maps/hallway.jpg') center center / cover no-repeat fixed;
 }
 
 body.downstairs {
-    background: url('./assets/maps/downstairs.png') center center / cover no-repeat fixed;
+    background: url('../assets/maps/downstairs.png') center center / cover no-repeat fixed;
     background-color: #000;
 }
 
@@ -67,14 +67,14 @@ color: darkblue
 /* Fonts */
 @font-face {
     font-family: 'Expose-Regular';
-    src: url('./assets/fonts/Expose-Regular.otf') format('truetype');
+    src: url('../assets/fonts/Expose-Regular.otf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Alice-in-Wonderland';
-    src: url('./assets/fonts/Alice_in_Wonderland_3.ttf') format('truetype');
+    src: url('../assets/fonts/Alice_in_Wonderland_3.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
