@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get to the Fridge</title>
+    <link rel="stylesheet" href="css/style.css">
+    
+</head>
+<body>
+    <!-- Music -->
+<audio id="intro-audio" src="./assets/music/intro.mp3"></audio>
+<audio id="music1-audio" src="./assets/music/music1.mp3" loop></audio>
+<!-- Sound effects -->
+<audio id="button-audio" src="./assets/sounds/Silent_Hill_2_00152.wav"></audio>
+<audio id="relief-button-sound" src="./assets/sounds/Silent_Hill_2_00153.wav"></audio>
+<!-- images -->
+<img src="./assets/images/fnafbear_unknown.png" alt="Fredbear on the floor" id="fredbear" class="fredbear">
+
+    <main>
+<div id="start-screen">
+    <h2 class="start-title">The Night is Here...</h2>
+    <p class="start-desc" id="start-desc">You are quite thirsty, yet shadows lurk in the darkness. Can you make it to the fridge before they swallow you whole?</p>
+    <div class="start-content">
+        <button id="start-btn" class="hidden-btn">Leave Your Room</button>
+    </div>
+</div>
+
+<div class="choice-buttons">
+    <button id="btn-light-room">Go to the Room with the Light</button>
+    <button id="btn-downstairs">Go Downstairs</button>
+</div>
+
+    </main>
+    <script src="js/main.js"></script> 
+</body>
+</html>
