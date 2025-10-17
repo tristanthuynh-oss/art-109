@@ -1,0 +1,616 @@
+/* Global
+----------------------------------*/
+
+body {
+  background: pink;
+}
+
+/* Links */
+
+/* Fonts */
+@font-face {
+  font-family: 'Windows95FA';
+  src: url('../assets/fonts/W95FA.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Daydreams';
+  src: url('../assets/fonts/Daydream\ DEMO.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'KiwiSoda';
+  src: url('../assets/fonts/KiwiSoda.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Pixelout';
+  src: url('../assets/fonts/Pixelout\ Personal\ Use\ Only.ttf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Alagard';
+  src: url('../assets/fonts/alagard.ttf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+html, body {
+  height: 100%;
+}
+body {
+  background: #2a5518;
+  margin: 0;
+  font-family: "Windows95FA", sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.4;
+}
+h1, h2, h3 {
+  font-family: "Alagard", serif;
+  font-weight: 400;
+  margin: 0;
+}
+h1 {
+  font-size: 7rem;
+  line-height: 0.85;
+}
+h2 {
+  font-size: 3.6rem;
+}
+h3 {
+  font-size: 2.4rem;
+}
+a {
+  color: #009e15;
+}
+a:hover {
+  color: #00c3ff;
+  text-decoration: none;
+}
+footer a {
+  color: #08f728;
+}
+.btn {
+  background-color: #00ff1e;
+  color: rgb(255, 61, 239);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  padding: 7px;
+  letter-spacing: 0.1em;
+  line-height: 1;
+  border-radius: 4px;
+}
+
+/* ===== Windows 95 Window (scoped) ===== */
+.win95-window {
+  width: min(900px, 95%);
+  margin: 2rem auto;
+  background: #c0c0c0;
+  border-top: 2px solid #fff;
+  border-left: 2px solid #fff;
+  border-right: 2px solid #808080;
+  border-bottom: 2px solid #808080;
+  box-shadow: 1px 1px 0 #000;
+}
+
+.win95-titlebar {
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(#00007b, #1a46b8);
+  color: #fff;
+  padding: 0 6px;
+}
+.win95-title {
+  font-family: "Windows95FA", Tahoma, Verdana, Arial, sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.win95-controls {
+  display: flex;
+  gap: 2px;
+}
+.win95-btn {
+  min-width: 22px;
+  height: 18px;
+  line-height: 16px;
+  font-family: "Windows95FA", Tahoma, Verdana, Arial, sans-serif;
+  font-size: 12px;
+  color: #000;
+  background: #c0c0c0;
+  border-top: 2px solid #fff;
+  border-left: 2px solid #fff;
+  border-right: 2px solid #808080;
+  border-bottom: 2px solid #808080;
+  padding: 0;
+  cursor: default;
+}
+.win95-btn:active {
+  border-top: 2px solid #808080;
+  border-left: 2px solid #808080;
+  border-right: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  background: #bdbdbd;
+}
+.win95-btn.close {
+  color: #000;
+  background: #c0c0c0;
+}
+
+.win95-body {
+  padding: 8px;
+  background: #c0c0c0;
+  border-top: 2px solid #808080;
+  border-left: 2px solid #808080;
+  border-right: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+}
+
+.win95-header h1,
+.win95-header h2 {
+  margin: 0 0 4px 0;
+}
+.win95-header h1 {
+  font-family: "Alagard", Tahoma, serif;
+  font-size: clamp(2.4rem, 4vw, 5rem);
+  line-height: 1;
+}
+.win95-header h2 {
+  font-family: "Windows95FA", Tahoma, Verdana, Arial, sans-serif;
+  font-size: clamp(1.4rem, 2vw, 2.2rem);
+  color: #000;
+}
+.win95-content p {
+  margin: 10px 0;
+  font-family: "Windows95FA", Tahoma, Verdana, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+}
+.win95-content a {
+  color: #0000ff;
+  text-decoration: underline;
+}
+
+.win95-statusbar {
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #c0c0c0;
+  padding: 0 6px;
+  border-top: 2px solid #fff;
+  border-left: 2px solid #fff;
+  border-right: 2px solid #808080;
+  border-bottom: 2px solid #808080;
+  font-family: "Windows95FA", Tahoma, Verdana, Arial, sans-serif;
+  font-size: 12px;
+}
+.win95-statusbar .status-left,
+.win95-statusbar .status-right {
+  white-space: nowrap;
+}
+.win95-window:focus-within {
+  outline: 1px dotted #000;
+  outline-offset: -4px;
+}
+
+@media (max-width: 480px) {
+  .win95-titlebar { height: 26px; }
+  .win95-btn { min-width: 20px; height: 16px; font-size: 11px; }
+  .win95-statusbar { height: 20px; font-size: 11px; }
+}
+
+/* ===== Neon 90s Pixel Box with Responsive Ratio ===== */
+#profile-links-box.button-box {
+  width: min(90vw, 900px);
+  height: 33vh;
+  margin: 3rem auto;
+  background: linear-gradient(135deg, #0d0033, #32004b);
+  border: 3px ridge #ff00ff;
+  box-shadow: 0 0 10px #ff00ff, 0 0 20px #00ffff inset;
+  border-radius: 0;
+  image-rendering: pixelated;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#profile-links-box .button-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2vw;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+}
+#profile-links-box .btn {
+  display: inline-block;
+  background: linear-gradient(180deg, #19002a 0%, #260043 100%);
+  border-top: 0.4vh solid #ff77ff;
+  border-left: 0.4vh solid #ff77ff;
+  border-right: 0.4vh solid #0099ff;
+  border-bottom: 0.4vh solid #0099ff;
+  color: #00ffff;
+  text-decoration: none;
+  font-family: "Windows95FA", "Press Start 2P", monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-shadow: 0 0 0.5vh #ff00ff;
+  padding: 1.5vh 3vw;
+  font-size: 1.3vh;
+  border-radius: 0;
+  cursor: default;
+  position: relative;
+  image-rendering: pixelated;
+}
+#profile-links-box .btn:active {
+  border-top: 0.4vh solid #0099ff;
+  border-left: 0.4vh solid #0099ff;
+  border-right: 0.4vh solid #ff77ff;
+  border-bottom: 0.4vh solid #ff77ff;
+  background: linear-gradient(180deg, #12001f 0%, #1f002f 100%);
+}
+
+@keyframes pixel-flicker {
+  0% { filter: none; }
+  25% { filter: hue-rotate(40deg) contrast(180%) brightness(140%); }
+  50% { filter: hue-rotate(180deg) contrast(200%) brightness(160%); }
+  75% { filter: hue-rotate(300deg) contrast(180%) brightness(140%); }
+  100% { filter: none; }
+}
+@keyframes caret-blink {
+  0%, 49% { opacity: 0; }
+  50%, 100% { opacity: 0.8; }
+}
+
+#profile-links-box .btn::after {
+  content: none !important;
+}
+#profile-links-box .btn.active::after,
+#profile-links-box .btn:hover::after {
+  content: "";
+  width: 0.6vh;
+  height: 1.4vh;
+  background: #00ffff;
+  position: absolute;
+  right: 1vh;
+  top: 50%;
+  transform: translateY(-50%);
+  animation: caret-blink 1s steps(2, jump-none) infinite;
+  image-rendering: pixelated;
+}
+#profile-links-box .btn:hover,
+#profile-links-box .btn.active {
+  animation: pixel-flicker 0.4s steps(5, end) 1;
+  box-shadow: 0 0 1vh #00ffff, 0 0 2vh #ff00ff, 0 0 4vh #00ffff;
+  text-decoration: underline;
+}
+#profile-links-box .btn:hover,
+#profile-links-box .btn.active {
+  animation: pixel-flicker 0.45s steps(5, end) 1;
+  text-decoration: underline;
+  box-shadow: 0 0 5px #00ffff, 0 0 12px #ff00ff, 0 0 24px #00ffff;
+}
+#profile-links-box .btn:focus-visible {
+  outline: 1px dotted #00ffff;
+}
+
+.content-wrapper {
+  margin: 0px auto;
+  padding: 30px;
+  max-width: 900px;
+}
+
+/* Home
+----------------------------------*/
+
+/* ===== 90s Site Vibe ===== */
+body.home {
+  background-image: url("../assets/images/windowsbackground.png");
+  background-repeat: repeat;
+  background-attachment: fixed;
+}
+.hr-95 {
+  border: 0;
+  height: 2px;
+  background: linear-gradient(to right, #808080, #fff, #808080);
+  margin: 12px 0;
+}
+.badge-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+}
+.badge-row img {
+  width: 88px;
+  height: 31px;
+  image-rendering: pixelated;
+  border: 2px outset #c0c0c0;
+}
+a:hover { cursor: url("../assets/cursors/pointer.cur"), pointer; }
+
+.home {
+  background:url(../assets/images/windowsbackground.png) no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+}
+.home .content-wrapper {
+  flex: 1 0 auto;
+}
+
+@media screen and (max-width:650px){
+  .home .content-wrapper { padding: 10px; }
+  .content-bg { padding: 20px; }
+}
+
+/* Resume
+----------------------------------*/
+.resume header::before {
+  background:url(../assets/images/windowsbackground.png) center;
+  background-size: cover;
+  content: "hello";
+  display: block;
+  height: 375px;
+}
+.resume-section {
+  margin-bottom: 50px;
+}
+.resume-section h2 {
+  border-bottom: 2px dashed rgb(255, 0, 242);
+}
+.download-link {
+  position: fixed;
+  top: 5px;
+  left: 5px;
+  font-size: 1.5rem;
+}
+@media screen and (max-width: 1200px) {
+  .download-link { position: absolute; }
+}
+@media screen and (max-width: 500px){
+  .resume header::before { height: 200px; }
+  h1 { font-size: 5rem; }
+  h2 { font-size: 2.6rem; }
+}
+
+/* Header
+----------------------------------*/
+
+/* Projects
+----------------------------------*/
+.project-item {
+  display: flow-root;
+  margin: 30px 0;
+}
+.project-item img {
+  width: 300px;
+  float: left;
+  margin-right: 20px;
+}
+@media screen and (min-width: 800px) {
+  .project-item { display: flow-root; }
+  .project-item img { float: left; margin-right: 20px; }
+}
+@media screen and (min-width: 650px) and (max-width: 850px) {
+  .project-wrapper{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    column-gap: 20px;
+  }
+  .project-item img {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .project-item img {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+/* Work Experience
+------------------------------------*/
+.work-item {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  column-gap: 20px;
+  margin: 30px 0;
+}
+.work-details p { margin: 0; }
+.work-summary p:first-child { margin-top: 0; }
+@media screen and (min-width: 860px) {
+  .work-item {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    column-gap: 20px;
+  }
+  .work-summary p:first-child { margin-top: 0; }
+}
+
+/* Education
+------------------------------------*/
+.education-item {
+  margin: 30px 0;
+}
+.education-item p {
+  margin: 0;
+}
+
+/* Footer
+----------------------------------*/
+footer {
+  background: rgb(255, 2, 141);
+  color: whitesmoke;
+  display: flex;
+  justify-content: space-between;
+  padding:  0 20px;
+}
+.socials {
+  list-style-type: none;
+  padding: 0;
+}
+.socials li {
+  display: inline-block;
+  margin-left: 10px;
+}
+.socials img {
+  width: 32px;
+}
+.socials img:hover {
+  opacity: 0.5;
+}
+@media screen and (min-width: 860px){
+  footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+  }
+}
+@media screen and (max-width: 859px){
+  footer {
+    text-align: center;
+    padding: 10px;
+  }
+}
+
+/* nav */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: #fff;
+}
+.logo a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 24px;
+}
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+.nav-links li {
+  margin: 0 15px;
+}
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.3s, text-decoration 0.3s, background-color 0.3s;
+  padding: 5px 10px;
+}
+.nav-links a:hover,
+.nav-links a.active {
+  color: #e0e0e0;
+  background-color: #1c7430;
+  border-radius: 4px;
+}
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+.menu-toggle .bar {
+  background-color: #fff;
+  height: 3px;
+  width: 25px;
+  margin: 5px;
+}
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background-color: #28a745;
+  }
+  .nav-links.active { display: flex; }
+  .nav-links li { margin: 10px 0; text-align: center; }
+  .menu-toggle { display: flex; }
+}
+
+/* I dont know why but i have to do it like this or everything breaks*/
+.win95-body #profile-links-box.button-box {
+  width: 100%;
+  max-width: 100%;
+  height: 33vh;
+  margin: 0;
+  padding: 20px;
+  background: linear-gradient(135deg, #0d0033, #32004b);
+  border: 0;
+  border-radius: 0;
+  box-shadow: inset 0 0 10px #ff00ff, inset 0 0 20px #00ffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  image-rendering: pixelated;
+  box-sizing: border-box;
+}
+.win95-body {
+  overflow: hidden;
+}
+.win95-body #profile-links-box .button-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2vw;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+}
+#profile-links-box.button-box {
+}
+ 
+/* windows 95 style thingy stuffs 2*/
+.win95-body .proj-card,
+.win95-body .proj-card * {
+  color: #000;
+}
+.win95-body .proj-card:link,
+.win95-body .proj-card:visited,
+.win95-body .proj-card:hover,
+.win95-body .proj-card:active {
+  text-decoration: none;
+}
+.win95-body .proj-card:hover .proj-info h3 {
+  color: #0000ff;
+  text-decoration: underline;
+}
+.win95-body .proj-card:visited .proj-info h3 {
+  color: #551a8b;
+}
+.win95-body .proj-card .proj-info a {
+  color: #0000ff;
+  text-decoration: underline;
+}
+.win95-body .proj-card .proj-info a:visited {
+  color: #551a8b;
+}
+.win95-body .proj-card .proj-info a:hover {
+  color: #0000ff;
+  text-decoration: underline;
+}
