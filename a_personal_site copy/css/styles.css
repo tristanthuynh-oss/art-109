@@ -1,0 +1,263 @@
+
+/* Global
+----------------------------------*/
+
+body {
+background: pink;
+} 
+
+/*Links*/
+
+
+/* 
+  https://www.paulirish.com/2012/box-sizing-border-box-ftw/
+*/
+html {
+    box-sizing: border-box;
+    font-size:62.5%; /*default is 16px, so 62.5% of that is 10px. This makes calculating rem sizes easier*/
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+html, body {
+    height: 100%;
+}
+body {
+    background: #f6f6f6; 
+    margin: 0;
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 1.6rem; /*16px*/
+    line-height: 1.4;
+}
+h1, h2, h3 {
+  font-family: "Fredericka the Great", serif;
+  font-weight: 400;
+  margin: 0;
+}
+h1 {
+    font-size: 7rem;
+    line-height: 0.85;
+}
+h2 {
+    font-size: 3.6rem;
+}
+h3 {
+    font-size: 2.4rem;
+}
+a {
+    color: #009e15;
+}
+a:hover {
+    color: #00c3ff;
+    text-decoration: none;
+}
+footer a {
+    color: #08f728;
+}
+.btn {
+    background-color: #00ff1e;
+    color: rgb(255, 61, 239);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    padding: 7px;
+    letter-spacing: 0.1em;
+    line-height: 1;
+    border-radius: 4px;
+}
+
+.content-wrapper{
+    margin: 0px auto;
+    padding: 30px;
+    max-width: 900px;
+}
+
+/* Home
+----------------------------------*/
+.home {
+background:url(../images/bg-home-office-studio.jpg) no-repeat;
+background-size: cover;
+display: flex;
+flex-direction: column;
+}
+.home .content-wrapper {
+    flex: 1 0 auto;
+}
+.content-bg {
+    background: rgb(255,255,255, 0.85);
+    padding: 30px;
+}
+@media screen and (max-width:650px){
+    .home .content-wrapper {
+        padding: 10px;
+    }
+    .content-bg {
+        padding: 20px;
+    }
+}
+
+/* Resume
+----------------------------------*/
+.resume header::before {
+    background:url(../images/bg-home-office-studio.jpg) center;
+    background-size: cover;
+    content: "hello";
+    display: block;
+    height: 375px;
+}
+
+.resume-section {
+margin-bottom: 50px;
+}
+
+.resume-section h2 {
+border-bottom: 2px dashed rgb(255, 0, 242);
+}
+
+.download-link {
+    position: fixed;
+    top: 5px;
+    left: 5px;
+    font-size: 1.5rem;
+}
+@media screen and (max-width: 1200px) {
+    .download-link {
+    position: absolute;
+}
+}
+@media screen and (max-width: 500px){
+    .resume header::before {
+        height: 200px;
+    }
+    h1 {
+        font-size: 5rem;
+    }
+    h2 {
+        font-size: 2.6rem;
+    }
+}
+
+/* Header
+----------------------------------*/
+
+
+
+/* Projects
+----------------------------------*/
+.project-item {
+display: flow-root;
+margin: 30px 0;
+}
+
+.project-item img {
+    width: 300px;
+    float: left;
+    margin-right: 20px;
+}
+@media screen and (min-width: 800px) {
+    .project-item {
+        display: flow-root;
+    }
+    .project-item img {
+        float: left;
+        margin-right: 20px;
+    }
+}
+
+@media screen and (min-width: 650px) and (max-width: 850px) {
+    .project-wrapper{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        column-gap: 20px;
+    }
+    .project-item img {
+    width: 100%;
+       
+    }
+}
+
+@media screen and (max-width: 500px) {
+        .project-item img {
+    width: 100%;
+    margin-bottom: 10px;
+    }
+}
+
+/* Work Experience
+------------------------------------*/
+.work-item {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    column-gap: 20px;
+    margin: 30px 0;
+}
+.work-details p {
+    margin: 0;
+}
+.work-summary p:first-child {
+    margin-top: 0;
+}
+
+@media screen and (min-width: 860px) {
+    .work-item {
+        display: grid;
+        grid-template-columns: 300px 1fr;
+        column-gap: 20px;
+    }
+    .work-summary p:first-child {
+        margin-top: 0;
+    }
+}
+
+/* Education
+------------------------------------*/
+.education-item {
+    margin: 30px 0;
+}
+.education-item p {
+    margin: 0;
+}
+
+/* Footer
+----------------------------------*/
+footer {
+  background: rgb(255, 2, 141);
+  color: whitesmoke;
+  display: flex;
+  justify-content: space-between;
+  padding:  0 20px;
+}
+
+.socials {
+    list-style-type: none;
+    padding: 0;
+}
+.socials li {
+    display: inline-block;
+    margin-left: 10px;
+}
+.socials img {
+    width: 32px;
+}
+.socials img:hover {
+    opacity: 0.5;
+}
+
+@media screen and (min-width: 860px){
+    footer {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 20px;
+    }
+}
+@media screen and (max-width: 859px){
+    footer {
+        text-align: center;
+        padding: 10px;
+    }
+
+}
+/* 
+----------------------------------*/
+
