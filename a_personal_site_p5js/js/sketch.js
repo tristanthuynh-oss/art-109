@@ -1,5 +1,4 @@
-
-let x = 0; // stores lagging X position
+        let x = 0; // stores lagging X position
 let y = 0; // stores lagging Y position
 let easing = 0.05; // speed of ease: 0 to 1.0
 let bg;
@@ -14,9 +13,7 @@ function setup() {
 
     canvas = createCanvas(windowWidth, windowHeight);
     canvas.position(0, 0);
-    canvas.style('position','fixed');
-    canvas.style('inset','0');
-    canvas.style('z-index','1');
+    canvas.style('z-index','-1');
 }
 
 function windowResized() {
@@ -25,7 +22,7 @@ function windowResized() {
 
 function draw() {
     console.log('sketch.js loaded');
-  
+  background(bg);
   
   x = x + ((mouseX - x) * easing);
   y = y + ((mouseY - y) * easing);
@@ -35,4 +32,3 @@ function draw() {
   pop();
   image(ethel,x-100, y- 50, 100, 100);
 }
-
