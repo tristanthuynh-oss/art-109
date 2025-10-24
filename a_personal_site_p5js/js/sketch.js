@@ -23,7 +23,6 @@ function windowResized() {
 
 function draw() {
     console.log('sketch.js loaded');
-  image(bg, 0, 0, windowWidth, windowHeight);
   
   x = x + ((mouseX - x) * easing);
   y = y + ((mouseY - y) * easing);
