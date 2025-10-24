@@ -10,8 +10,8 @@ function preload() {
 
 function setup() {
   canvas = createCanvas(windowWidth, windowHeight);
-  canvas.parent('p5-holder');   // <— mount under the holder
-  // no negative z-index; CSS handles layering
+  canvas.parent('p5-bg');
+
 }
 
 function windowResized() {

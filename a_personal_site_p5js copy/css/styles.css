@@ -385,16 +385,20 @@ footer {
 }
 
 
-/* put this in css/styles.css */
-#p5-holder, #p5-holder canvas {
-  position: fixed;      /* pin to viewport */
-  inset: 0;             /* top:0; right:0; bottom:0; left:0 */
-  z-index: 0;           /* background layer */
-  pointer-events: none; /* clicks go through to your page */
+/* p5 background layer */
+#p5-bg, #p5-bg canvas {
+  position: fixed;
+  inset: 0;
+  z-index: 0;     
+  pointer-events: none;
 }
 
-.navbar, .content-wrapper, footer {
-  position: relative;   /* create stacking context above the canvas */
+
+header, nav, main, footer, .content-wrapper, .navbar {
+  position: relative;
   z-index: 1;
-  background: transparent; /* important: don't paint over the canvas */
+}
+
+body { 
+  background: transparent;   
 }
