@@ -14,7 +14,9 @@ function setup() {
 
     canvas = createCanvas(windowWidth, windowHeight);
     canvas.position(0, 0);
-    canvas.style('z-index', '-1');
+    canvas.style('position','fixed');
+    canvas.style('inset','0');
+    canvas.style('z-index','1');
 }
 
 function windowResized() {
@@ -23,6 +25,7 @@ function windowResized() {
 
 function draw() {
     console.log('sketch.js loaded');
+  
   
   x = x + ((mouseX - x) * easing);
   y = y + ((mouseY - y) * easing);
