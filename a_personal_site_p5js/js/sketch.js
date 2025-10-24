@@ -21,6 +21,10 @@ function draw() {
   
   x = x + ((mouseX - x) * easing);
   y = y + ((mouseY - y) * easing);
+  push();
+  fill(random(255), random(255), random(255), 150);
+  ellipse(x -50, y, 50, 50)
+  pop();
   image(ethel,x-100, y- 50, 100, 100);
 }
 
