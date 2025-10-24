@@ -4,9 +4,14 @@ let y = 0; // stores lagging Y position
 let easing = 0.05; // speed of ease: 0 to 1.0
 let bg;
 let ethel;
-function setup() {
+
+function preload() {
     bg = loadImage('./assets/images/windowsbackground.png');
     ethel = loadImage('./assets/images/cat1.png');
+}
+
+function setup() {
+
     canvas = createCanvas(windowWidth, windowHeight);
     canvas.position(0, 0);
     canvas.style('z-index', '-1');
