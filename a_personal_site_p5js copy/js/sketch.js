@@ -11,7 +11,7 @@ function preload() {
   scootercat = loadImage('assets/images/scootercat.gif');
   durie = loadImage('assets/images/durie.png');
   gakel = loadImage('assets/images/gakel.png');
-  maxwell = loadImage('assets/images/maxwellspinning.gif');
+  maxwell = loadImage('assets/images/maxwellspinning_1.gif');
 }
 
 function setup() {
