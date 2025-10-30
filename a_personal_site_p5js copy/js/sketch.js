@@ -11,7 +11,7 @@ function preload() {
   scootercat = loadImage('assets/images/scootercat.gif');
   durie = loadImage('assets/images/durie.png');
   gakel = loadImage('assets/images/gakel.png');
-
+  maxwell = loadImage('assets/images/maxwellspinning_1.gif');
 }
 
 function setup() {
@@ -40,7 +40,10 @@ function draw() {
   if (lox < -200) {
     lox = width + 200;
   }
-
+  qox += -3.5;
+  if (qox < -200) {
+    qox = width + 250;
+  }
 tox += 4;
 if (tox > width + 225) {
   tox = -200;
@@ -56,6 +59,7 @@ if (tox > width + 225) {
 
   // image layer for the cats
   image(gakel,pox, height - 200, 150, 160);
+image(maxwell,qox, height - 200, 150, 160);
 image(scootercat,tox, height - 200, 150, 150);
 image(applecat,lox, height - 200, 150, 150);
 image(durie,mox, height - 200, 150, 160);
