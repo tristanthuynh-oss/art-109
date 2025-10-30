@@ -257,8 +257,16 @@ margin: 30px 0;
 /* Footer
 ----------------------------------*/
 footer {
-  background: rgb(255, 2, 141);
-  color: whitesmoke;
+  background: linear-gradient(
+    to bottom,      
+    white 1px,            
+    white 4px,            
+    rgb(192,192,192) 8px  
+  );
+   
+  color: rgb(0, 0, 0);
+  border-top: 2px solid #fff;
+  border-top: 4px solid rgb(223,223,223);
   display: flex;
   justify-content: space-between;
   padding:  0 20px;
@@ -273,7 +281,7 @@ footer {
     margin-left: 10px;
 }
 .socials img {
-    width: 32px;
+    width: 16px;
 }
 .socials img:hover {
     opacity: 0.5;
@@ -385,7 +393,7 @@ footer {
 }
 
 
-/* p5 background layer */
+/* Had some bugs with implenetation for some reason so I did this */
 #p5-bg, #p5-bg canvas {
   position: fixed;
   inset: 0;

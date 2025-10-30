@@ -19,7 +19,7 @@ function windowResized() {
 }
 
 function draw() {
-  if (bg) image(bg, 0, 0, width, height);
+  background(0,128,128);
 
   x += (mouseX - x) * easing;
   y += (mouseY - y) * easing;
