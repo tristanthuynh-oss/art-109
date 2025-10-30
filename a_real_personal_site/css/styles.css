@@ -368,7 +368,6 @@ a:hover { cursor: url("../assets/cursors/pointer.cur"), pointer; }
 .resume header::before {
   background:url(../assets/images/windowsbackground.png) center;
   background-size: cover;
-  content: "hello";
   display: block;
   height: 375px;
 }

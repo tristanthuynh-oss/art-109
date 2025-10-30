@@ -48,8 +48,9 @@ background: pink;
   https://www.paulirish.com/2012/box-sizing-border-box-ftw/
 */
 html {
+  
     box-sizing: border-box;
-    font-size:62.5%; /*default is 16px, so 62.5% of that is 10px. This makes calculating rem sizes easier*/
+    font-size:62.5%; 
 }
 *, *:before, *:after {
     box-sizing: inherit;
@@ -59,10 +60,10 @@ html, body {
     height: 100%;
 }
 body {
-    background: #f6f6f6; 
+    background:url(../assets/images/webpage_bg_tile.png);
     margin: 0;
     font-family: "Windows95FA", sans-serif;
-    font-size: 1.6rem; /*16px*/
+    font-size: 1.6rem; 
     line-height: 1.4;
 }
 h1, h2, h3 {
@@ -91,8 +92,8 @@ footer a {
     color: #08f728;
 }
 .btn {
-    background-color: #00ff1e;
-    color: rgb(255, 61, 239);
+    background-color: #f09732;
+    color: rgb(50, 66, 58);
     text-decoration: none;
     text-transform: uppercase;
     font-size: 1.2rem;
@@ -111,7 +112,7 @@ footer a {
 /* Home
 ----------------------------------*/
 .home {
-background:url(../assets/images/windowsbackground.png) no-repeat;
+background:url(../assets/images/space_texture.jpg);
 background-size: cover;
 display: flex;
 flex-direction: column;
@@ -135,9 +136,9 @@ flex-direction: column;
 /* Resume
 ----------------------------------*/
 .resume header::before {
-    background:url(../assets/images/windowsbackground.png) center;
-    background-size: cover;
-    content: "hello";
+    background:url(../assets/images/space_texture.jpg) center;
+    background-size: small;
+    content: "";
     display: block;
     height: 375px;
 }
@@ -147,7 +148,7 @@ margin-bottom: 50px;
 }
 
 .resume-section h2 {
-border-bottom: 2px dashed rgb(255, 0, 242);
+border-bottom: 4px groove rgb(255, 0, 242);
 }
 
 .download-link {
@@ -310,9 +311,9 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
-    background-color: #28a745;
-    /* Green background */
+
+     background: linear-gradient(to right,  rgb(0,7,132), rgb(48,169,237));
+
     color: #fff;
 }
 
@@ -344,11 +345,8 @@ footer {
 .nav-links a:hover,
 .nav-links a.active {
     color: #e0e0e0;
-    /* Lighter color for active/hover */
-    background-color: #1c7430;
-    /* Darker green background on hover */
+    background-color: #0ecfff;
     border-radius: 4px;
-    /* Optional: rounded corners */
 }
 
 /* Menu toggle button for mobile view */
@@ -393,7 +391,11 @@ footer {
 }
 
 
-/* Had some bugs with implenetation for some reason so I did this */
+/* Had some bugs with implenetation for some reason so I did this 
+also me too lazy to to orgnaize stuff form tutorial so im just gonna shove it all down here so 
+sorry prof. lark or other TA if you see this lmao
+
+*/
 #p5-bg, #p5-bg canvas {
   position: fixed;
   inset: 0;
@@ -407,6 +409,90 @@ header, nav, main, footer, .content-wrapper, .navbar {
   z-index: 1;
 }
 
-body { 
-  background: transparent;   
+.content-bg-projects {
+    background: rgba(146, 255, 83, 0.85);
+    padding: 30px;
 }
+
+.content-bg-resume {
+    background: rgba(83, 255, 255, 0.85);
+    padding: 30px;
+}
+
+.image-layout {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 16px;
+}
+
+.left-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+
+/* credit to Simone for the resources for sick designs that I used as template for my thing
+https://simone.computer/#/webdesktops
+ Shoutouts to Jordan Scales for a lot of the css templates check out his github here
+    https://github.com/jdan/98.css
+ 
+*/
+.funne-old-computer {
+  display: inline-grid;
+  flex-direction: row;
+  gap: 16px;
+  place-items: center;
+  padding: 8px;
+}
+
+.funne-old-computer .funne-icon {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: flex-start;
+  text-decoration: none;
+  width: 72px;
+  cursor: pointer;
+  user-select: none;
+  overflow: hidden;
+}
+
+
+.funne-old-computer .funne-icon__img {
+  width: 48px;
+  height: 48px;
+  image-rendering: pixelated;
+  display: block;
+  float: none !important;
+  margin: 0 !important;
+}
+
+.funne-old-computer .funne-icon__label {
+  display: block !important;
+  margin-top: 6px;
+  padding: 2px 4px;
+  font-size: 12px;
+  line-height: 1.2;
+  color: #000;
+  background: rgba(192,192,192,0.6);
+  border: 1px solid transparent;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.funne-old-computer .funne-icon:hover .funne-icon__label,
+.funne-old-computer .funne-icon:focus .funne-icon__label {
+  background: #000080;
+  color: #fff;
+  border-color: #000080;
+  outline: none;
+}
+
+.funne-old-computer .funne-icon:focus-visible .funne-icon__label {
+  box-shadow: 0 0 0 2px #fff, 0 0 0 3px #000080;
+}
+
+
+
