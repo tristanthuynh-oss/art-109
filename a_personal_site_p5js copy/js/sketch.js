@@ -31,10 +31,11 @@ function windowResized() {
 
 function draw() {
   background(0,128,128);
-// movement for the ethel to cat to follow  the mouse
+// movement for the ethel to cat to follow  the mouse maybe they are confused and think its like a mouse mouse 
   x += (mouseX - x) * easing;
   y += (mouseY - y) * easing;
-// movements for cats
+// movements for cats so theyre like a walking through so its not so much negative space for a homepage
+// note to self check for captialization
   lox += -2;
   if (lox < -200) {
     lox = width + 200;
