@@ -432,7 +432,8 @@ header, nav, main, footer, .content-wrapper, .navbar {
   gap: 16px;
 }
 
-
+/* CSS for the computer Icons to give that windows 98/95 look 
+*/
 /* credit to Simone for the resources for sick designs that I used as template for my thing
 https://simone.computer/#/webdesktops
  Shoutouts to Jordan Scales for a lot of the css templates check out his github here
