@@ -290,7 +290,6 @@ function showResults() {
     optEl.innerHTML = `
         <p><strong>YOUR WIZARD POWER:</strong> ${powerTitle}</p>
         <p>${description}</p>
-
     `;
 
     scoreEl.textContent = "";
