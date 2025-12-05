@@ -1,0 +1,35 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible"
+    content="IE=edge">
+    <meta name="viewport" 
+    content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Wizard Quiz</title>
+</head>
+
+<body>
+    <div class="panel">
+        <img src="assets/images/sick_wizard_title.gif" alt="Wizard Title" class="title-image">
+        
+
+        <div class="question" id="ques"></div>
+        <div class="options" id="opt"></div>
+
+
+        <button onclick="checkAns()" id="btn">ONWARDS</button>
+
+
+        <div id="score"></div>
+
+
+        <div id="end-buttons" class="hidden">
+            <button id="retry-btn" class="secondary">LET ME TRY AGAIN</button>
+            <button id="continue-btn" class="primary">TO THE WARDROBE</button>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

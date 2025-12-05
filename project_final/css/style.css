@@ -1,0 +1,78 @@
+/* Note, yeah its like super messy to have two CSS but this was made from a tutorial template
+and honestly i could not be bothered to try and organize it because this is a mishmash of using my 
+resume website as a template and figuring out how to fix both is make my head explode so 
+we're just doing two css files for now 
+----------------------------------*/
+body {
+    background:url(../assets/images/space_texture.jpg);
+    margin: 0;
+    color: #009e15;
+    font-family: "Windows95FA", sans-serif;
+    font-size: 1.6rem; 
+    line-height: 1.4;
+}
+.hidden {
+    display: none;
+}
+
+/* The option cards with image on top */
+.option-card {
+    display: inline-block;
+    width: 100%;
+    max-width: 260px;
+    margin: 0.5rem;
+
+    overflow: hidden;
+    background: #1b1030;
+    border: 5px solid #7058d8;
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.option-card:hover {
+
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    border-color: #facc6b;
+}
+
+.option-image {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    display: block;
+}
+
+.option-bottom {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 0.8rem;
+}
+
+.option-bottom input[type="radio"] {
+    accent-color: #facc6b;
+}
+
+.option-label {
+    font-size: 0.9rem;
+}
+
+
+.panel {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#end-buttons {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
