@@ -21,19 +21,12 @@ body {
     width: 100%;
     max-width: 260px;
     margin: 0.5rem;
-
     overflow: hidden;
     background: #1b1030;
-    border: 5px solid #7058d8;
     cursor: pointer;
-    transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
 }
 
-.option-card:hover {
 
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
-    border-color: #facc6b;
-}
 
 .option-image {
     width: 100%;

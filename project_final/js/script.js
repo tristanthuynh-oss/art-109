@@ -107,6 +107,7 @@ const questions = [
             },
         ],
     },
+    
 ];
 
 // cool first name 
@@ -235,7 +236,7 @@ function computeResult() {
 
     const wizardName = buildWizardName(topStyle, topElement);
     const powerTitle =
-        powerTitleByElement[topElement] || "Mystic Arts – Jack-of-all-Elements";
+        powerTitleByElement[topElement] || "MAGIC MAN : DOER OF THE THINGS";
     const description = powerDescription[topElement] || "";
 
     return { topElement, topStyle, wizardName, powerTitle, description };
@@ -255,8 +256,8 @@ function getTopKey(scoreObj, fallbackKey) {
 }
 
 function buildWizardName(style, element) {
-    const firstOptions = firstNameByStyle[style] || ["Arin", "Lumi"];
-    const lastOptions = lastNameByElement[element] || ["Spellweaver"];
+    const firstOptions = firstNameByStyle[style] || ["Steve", "Jobs"];
+    const lastOptions = lastNameByElement[element] || ["Stevejobs"];
 
     const first =
         firstOptions[Math.floor(Math.random() * firstOptions.length)];

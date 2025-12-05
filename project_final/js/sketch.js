@@ -58,11 +58,6 @@ if (tox > width + 225) {
   }
 
   // image layer for the cats
-  image(gakel,pox, height - 200, 150, 160);
-image(maxwell,qox, height - 200, 150, 160);
-image(scootercat,tox, height - 200, 150, 150);
-image(applecat,lox, height - 200, 150, 150);
-image(durie,mox, height - 200, 150, 160);
 
 
 
