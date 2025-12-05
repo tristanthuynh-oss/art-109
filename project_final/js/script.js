@@ -290,7 +290,7 @@ function showResults() {
     optEl.innerHTML = `
         <p><strong>YOUR WIZARD POWER:</strong> ${powerTitle}</p>
         <p>${description}</p>
-        <p><em>(AFFFINITY: ${topElement}, PERSONALITY TYPE: ${topStyle})</em></p>
+
     `;
 
     scoreEl.textContent = "";
