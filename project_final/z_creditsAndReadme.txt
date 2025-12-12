@@ -1,4 +1,4 @@
-Credits and other stuff, I didn't use AI I looked up a lot of stuff and used a lot of templates and guides.
+Credits and other stuff, I looked up a lot of stuff and used a lot of templates and guides.
 I also had a coding art class before this semester so i know bit more about coding 
 
 
