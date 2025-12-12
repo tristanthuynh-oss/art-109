@@ -226,7 +226,7 @@ function changeleftarm(dir) {
 }
 
 function changerightarm(dir) {
-  const NUM_RIGHT_ARMS = 5;           
+  const NUM_RIGHT_ARMS = 6;           
   const options = NUM_RIGHT_ARMS + 1; 
   rightarm_index = (rightarm_index + dir + options) % options;
 }
@@ -243,9 +243,8 @@ function changerightarm(dir) {
     wizardPower = savedResult.element;  // or whatever you called it in the quiz
     wizardTrait = savedResult.style;    // or your quiz property name
   } else {
-    alert('THE ORB REJECTS YOU FOR YOU HAVE NOT DONE MY FUNNY QUIZ');
+    alert('THE ORB REJECTS YOU FOR YOU HAVE NOT DONE MY FUNNY QUIZ, YOU SHOULD GO DO IT ');
     console.log('THE ORB DOES NOT SENSE A WIZARD POWER');
-    window.location.href = "index.html";
   }
 
 
