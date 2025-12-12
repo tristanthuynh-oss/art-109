@@ -20,19 +20,19 @@ const questions = [
         answers: [
             {
                 label: "Flonzeberry Orchard Juice.",
-                image: "assets/images/wizard_magic_placeholder_image.jpeg",
+                image: "assets/images/wizardjuice.jpg",
                 element: "fire",
                 style: "bold",
             },
             {
                 label: "Darkwhisper Mega Coffee.",
-                image: "assets/images/wizard_magic_placeholder_image.jpeg",
+                image: "assets/images/wizardcoffee.jpg",
                 element: "ice",
                 style: "wise",
             },
             {
                 label: "Coke.",
-                image: "assets/images/wizard_magic_placeholder_image.jpeg",
+                image: "assets/images/coke.jpg",
                 element: "money",
                 style: "lame",
             },
@@ -43,19 +43,19 @@ const questions = [
         answers: [
             {
                 label: "A gryphon, who's wings would shadow the fields in it's size.",
-                image: "assets/images/wizard_magic_placeholder_image.jpeg",
+                image: "assets/images/gryphon.jpg",
                 element: "fire",
                 style: "dramatic",
             },
             {
                 label: "A cat made out of shadows and magic, because that's sick.",
-                image: "assets/images/wizard_magic_placeholder_image.jpeg",
+                image: "assets/images/cat.jpg",
                 element: "ice",
                 style: "wise",
             },
             {
                 label: "Im allergic to pets.",
-                image: "assets/images/wizard_magic_placeholder_image.jpeg",
+                image: "assets/images/rejection.jpg",
                 element: "money",
                 style: "lame",
             },
@@ -66,19 +66,19 @@ const questions = [
         answers: [
             {
                 label: "LOUD, SHORT, POWERFUl, DIE!.",
-                image: "assets/images/wizard_magic_placeholder_image.jpeg",
+                image: "assets/images/shout.jpg",
                 element: "fire",
                 style: "bold",
             },
             {
                 label: "I would speak in cold magical words, to really give it the weight.",
-                image: "assets/images/wizard_magic_placeholder_image.jpeg",
+                image: "assets/images/whisper.jpg",
                 element: "ice",
                 style: "calm",
             },
             {
                 label: "A gun.",
-                image: "assets/images/wizard_magic_placeholder_image.jpeg",
+                image: "assets/images/gun.jpg",
                 element: "money",
                 style: "lame",
             },
@@ -89,19 +89,19 @@ const questions = [
         answers: [
             {
                 label: "WHO IS THIS, I DEMAND TO KNOW WHO DEEMED ME CUTE.",
-                image: "assets/images/wizard_magic_placeholder_image.jpeg",
+                image: "assets/images/angrygandalf.jpg",
                 element: "fire",
                 style: "dramatic",
             },
             {
                 label: "Say nothing, stare. Stare until they break from your eyes of judgement.",
-                image: "assets/images/wizard_magic_placeholder_image.jpeg",
+                image: "assets/images/smolder.jpg",
                 element: "ice",
                 style: "wise",
             },
             {
                 label: "Ummm, I don't knowwwwww :^3.",
-                image: "assets/images/wizard_magic_placeholder_image.jpeg",
+                image: "assets/images/catface.jpg",
                 element: "money",
                 style: "lame",
             },
@@ -275,12 +275,15 @@ function showResults() {
     const { topElement, topStyle, wizardName, powerTitle, description } =
         computeResult();
 
+    const resultData = { 
+        name: wizardName, 
+        element: topElement, 
+        style: topStyle 
+    };
 
-    const resultData = { name: wizardName, element: topElement, style: topStyle };
     try {
-        localStorage.setItem("wizardQuizResult", JSON.stringify(resultData));
+        localStorage.setItem("wizardQuizResults", JSON.stringify(resultData));
     } catch (e) {}
-
 
     quesEl.innerHTML = `
         <h2>YOUR WIZARD NAME:</h2>
@@ -294,10 +297,10 @@ function showResults() {
 
     scoreEl.textContent = "";
 
-
     mainBtn.classList.add("hidden");
     endButtons.classList.remove("hidden");
 }
+
 
 // -----------------------------
 // 6. Loads the next thing and makes sure you answer the stupdi question
@@ -342,11 +345,20 @@ function resetQuiz() {
     loadQues();
 }
 
-retryBtn.addEventListener("click", resetQuiz);
+
+// if they didnt liek their answer they do this to retake the quiz
+retryBtn.addEventListener("click",() => {
+     resetQuiz();
+    localStorage.removeItem("wizardQuizResult");
+});
+
+
+
+
 
 continueBtn.addEventListener("click", () => {
 
-    alert("Shh, dont tell lark this isnt done yet");
+    window.location.href = "wizard_dollmaker.html";
 });
 
 
